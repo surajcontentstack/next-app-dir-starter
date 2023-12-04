@@ -1,3 +1,5 @@
+import React from "react";
+
 export const Aboutus = () => {
     return (
         <header className="Aboutus">

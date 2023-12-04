@@ -1,5 +1,6 @@
-import { getPageRes } from "@/healper";
-import { HeroBanner } from "./components/HeroBanner";
+import React from "react";
+import { getPageRes } from "../helper";
+import { HeroBanner } from "./HeroBanner";
 
 export default async function Home() {
     const data = await getPageRes("/about-us");
