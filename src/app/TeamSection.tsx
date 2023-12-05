@@ -27,8 +27,8 @@ type TeamProps = {
 
 export default function TeamSection({ ourTeam }: { ourTeam: TeamProps }) {
     return (
-        <div className="about-team-section">
-            <div className="team-head-section">
+        <div className="about-team-section  bg-[#f7f7f7] text-center">
+            <div className="team-head-section pt-16 w-auto max-w-[920px] m-auto">
                 {ourTeam.title_h2 && (
                     <h2 {...(ourTeam.$?.title_h2 as {})}>{ourTeam.title_h2}</h2>
                 )}
@@ -40,19 +40,19 @@ export default function TeamSection({ ourTeam }: { ourTeam: TeamProps }) {
                     ""
                 )}
             </div>
-            <div className="team-content">
+            <div className="team-content flex justify-center text-center pt-9 m-1 flex-wrap">
                 {ourTeam.employees?.map((employee, index) => (
-                    <div className="team-details" key={index}>
+                    <div className="team-details px-4 py-0" key={index}>
                         {employee.image && (
                             <Image
                                 alt={employee.image.filename}
                                 src={employee.image.url}
                                 {...(employee.image.$?.url as {})}
-                                height={10}
-                                width={10}
+                                height={360}
+                                width={280}
                             />
                         )}
-                        <div className="team-details">
+                        <div className="team-details pt-1">
                             {employee.name && (
                                 <h3 {...(employee.$?.name as {})}>
                                     {employee.name}

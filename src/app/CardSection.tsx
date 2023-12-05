@@ -20,9 +20,11 @@ type CardProps = {
 
 export default function CardSection({ cards }: CardProps) {
     return (
-        <div className="demo-section">
+        <div className="demo-section flex justify-center bg-[#f7f7f7] p-16  flex-wrap">
             {cards?.map((card, index) => (
-                <div className="cards" key={index}>
+                <div
+                    className="cards w-[25.65rem] bg-[#fff] border-[1px] border-radius-[5px] p-8 ml-6 flex flex-col"
+                    key={index}>
                     {card.title_h3 && (
                         <h3 {...(card.$?.title_h3 as {})}>{card.title_h3}</h3>
                     )}
@@ -36,6 +38,7 @@ export default function CardSection({ cards }: CardProps) {
                             card.call_to_action.href && (
                                 <Link
                                     href={card.call_to_action.href}
+                                    //btn not reflected
                                     className="btn primary-btn">
                                     {card.call_to_action.title}
                                 </Link>

@@ -40,16 +40,16 @@ export default function AboutSectionBucket({
     function bucketContent(bucket: Bucket, index: number) {
         return (
             <div
-                className="mission-content-section flex w-[23.5rem] sm:w-[19.5rem] sm:inline-block sm:text-center md:text-center md:w-auto md:p-[1.25rem]"
+                className="mission-content-section flex w-[24rem] "
                 key={index}>
                 {bucket.icon && (
                     <Image
-                        className="mission-icon inline-block h-12 mt-3 pr-8 sm:mt-3 sm:inline-block sm:p-0 md:p-0"
+                        className="mission-icon mt-[-2rem] pr-8 align-top"
                         {...(bucket.icon.$?.url as {})}
                         src={bucket.icon.url}
                         alt="art work"
-                        height={50}
-                        width={50}
+                        height={80}
+                        width={80}
                     />
                 )}
 
@@ -80,13 +80,13 @@ export default function AboutSectionBucket({
                 )}
             </div>
             <div className="mission-section">
-                <div className="mission-content-top flex justify-evenly text-left sm:flex sm:justify-evenly sm:text-left sm:flex-wrap">
+                <div className="mission-content-top flex justify-evenly text-left ">
                     {sectionWithBuckets?.buckets.map(
                         (bucket, index) =>
                             index < 2 && bucketContent(bucket, index)
                     )}
                 </div>
-                <div className="mission-content-bottom flex justify-evenly text-left sm:flex sm:justify-evenly sm:text-left sm:flex-wrap">
+                <div className="mission-content-bottom flex justify-evenly text-left ">
                     {sectionWithBuckets.buckets.map(
                         (bucket, index) =>
                             index >= 2 && bucketContent(bucket, index)

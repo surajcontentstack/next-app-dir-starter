@@ -25,19 +25,29 @@ type SectionProps = {
 export default function Section({ section }: { section: SectionProps }) {
     function contentSection(key: any) {
         return (
-            <div className="home-content" key={key}>
+            <div
+                data-testid="home-content"
+                className=" text-left mt-16 w-[30rem]"
+                key={key}>
                 {section.title_h2 && (
-                    <h2 {...(section.$?.title_h2 as {})}>{section.title_h2}</h2>
+                    //not reflected
+                    <h2
+                        className="text-28 leading-34"
+                        {...(section.$?.title_h2 as {})}>
+                        {section.title_h2}
+                    </h2>
                 )}
                 {section.description && (
-                    <p {...(section.$?.description as {})}>
+                    //not reflected
+                    <p className="" {...(section.$?.description as {})}>
                         {section.description}
                     </p>
                 )}
                 {section.call_to_action.title && section.call_to_action.href ? (
+                    //not reflected
                     <Link
+                        className="btn secondary-bt border-2 border-[#715cdd] mt-8"
                         href={section.call_to_action.href}
-                        className="btn secondary-btn"
                         {...section.call_to_action.$?.title}>
                         {section.call_to_action.title}
                     </Link>
@@ -57,11 +67,14 @@ export default function Section({ section }: { section: SectionProps }) {
                 key={key}
                 width={10}
                 height={10}
+                className="w-[540px] h-[420px]"
             />
         );
     }
     return (
-        <div className="home-advisor-section">
+        <div
+            data-testid="home-advisor-section"
+            className="bg-white m-16 p-8 flex justify-evenly text-center flex-wrap">
             {section.image_alignment === "Left"
                 ? [
                       imageContent("key-image"),

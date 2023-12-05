@@ -31,8 +31,10 @@ export type BucketProps = {
 
 export default function SectionBucket({ section }: { section: BucketProps }) {
     return (
-        <div className="member-main-section">
-            <div className="member-head">
+        <div
+            data-testid="member-main-section"
+            className=" bg-[#f7f7f7] m-auto p-[2rem]">
+            <div className="member-head text-center">
                 {section.title_h2 && (
                     <h2 {...(section.$?.title_h2 as {})}>{section.title_h2}</h2>
                 )}
@@ -42,16 +44,20 @@ export default function SectionBucket({ section }: { section: BucketProps }) {
                     </p>
                 )}
             </div>
-            <div className="member-section">
+            <div
+                data-testid="member-section"
+                className="text-center p-8 mt-12 flex justify-evenly flex-wrap ">
                 {section.buckets?.map((bucket, index) => (
-                    <div className="content-section" key={index}>
+                    <div className="content-section max-w-[22rem]" key={index}>
                         {bucket.icon && (
+                            //not reflected
                             <Image
                                 {...(bucket.icon.$?.url as {})}
                                 src={bucket.icon.url}
                                 alt="bucket icon"
-                                height={10}
-                                width={10}
+                                height={40}
+                                width={40}
+                                className="flex items-center"
                             />
                         )}
 
@@ -63,12 +69,16 @@ export default function SectionBucket({ section }: { section: BucketProps }) {
                             ""
                         )}
                         {typeof bucket.description === "string" && (
-                            <div {...(bucket.$?.description as {})}>
+                            <div
+                                className="mt-4 mb-4"
+                                {...(bucket.$?.description as {})}>
                                 {parse(bucket.description)}
                             </div>
                         )}
                         {bucket.call_to_action.title ? (
                             <Link
+                            //not reflected
+                                className=" font-semibold test-[#715cdd]-100"
                                 href={
                                     bucket.call_to_action.href
                                         ? bucket.call_to_action.href
