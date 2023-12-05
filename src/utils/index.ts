@@ -1,3 +1,4 @@
+"use server";
 import * as Utils from "@contentstack/utils";
 import ContentstackLivePreview from "@contentstack/live-preview-utils";
 import {

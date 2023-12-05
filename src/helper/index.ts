@@ -1,6 +1,6 @@
 import { addEditableTags } from "@contentstack/utils";
 import { Page, BlogPosts } from "../typescript/pages";
-import { FooterProps, HeaderProps } from "../typescript/layout";
+import { FooterProps, HeaderProps } from "@/typescript/layout";
 import { getEntry, getEntryByUrl } from "../utils";
 
 const liveEdit = process.env.CONTENTSTACK_LIVE_EDIT_TAGS === "true";
