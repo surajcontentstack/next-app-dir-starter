@@ -7,8 +7,7 @@ import { getPageRes } from "@/helper";
 import RenderComponents from "../RenderComponents";
 
 export default async function Home(props: Props) {
-
-    const entryResponse = await getPageRes("/blog");
+    const entryResponse = await getPageRes("/contact-us");
 
     return entryResponse ? (
         <RenderComponents

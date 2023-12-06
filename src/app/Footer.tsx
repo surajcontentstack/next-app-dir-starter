@@ -1,4 +1,4 @@
-// components/Footer.tsx
+import React from "react";
 import Image from "next/image";
 
 const socialLinks = [
@@ -29,7 +29,9 @@ const navLinks = [
 export const Footer = () => {
     return (
         <footer className="mt-16 bg-white">
-            <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-wrap">
+            <div
+                data-testid="footer-div"
+                className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap">
                 <div className="w-full sm:w-1/4">
                     <a href="/" className="logo-tag">
                         <Image
@@ -42,9 +44,9 @@ export const Footer = () => {
                         />
                     </a>
                 </div>
-                <div className="w-full sm:w-1/2">
+                <div className="w-full sm:w-1/2 m-auto p-auto">
                     <nav>
-                        <ul className="flex">
+                        <ul className="flex justify-center w-auto">
                             {navLinks.map((link) => (
                                 <li key={link.label} className="mr-4">
                                     <a
@@ -75,7 +77,7 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-gray-200 py-2">
+            <div className="py-2">
                 <p className="text-center text-gray-600">
                     Copyright © 2023. LogoIpsum. All rights reserved.
                 </p>
